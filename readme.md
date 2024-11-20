@@ -2,12 +2,6 @@
 
 # Map-Mover
 
-I want to make a React app, a kind of game. What your screen shows is your current view of this app. Visualised as if you have a birds eye view looking down at a page (room). You navigate other pages (the world) by swiping in any direction. You won't always be able to navigate. Some edges are walls.
-
-There should also be a button that opens a map.
-
-I was thinking the background should be an svg of a topographical map to start with...
-
 ## ToDo
 
 - Find high res topo map.
