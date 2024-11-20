@@ -1,4 +1,25 @@
-# React + TypeScript + Vite
+![](image.png)
+
+# Map-Mover
+
+I want to make a React app, a kind of game. What your screen shows is your current view of this app. Visualised as if you have a birds eye view looking down at a page (room). You navigate other pages (the world) by swiping in any direction. You won't always be able to navigate. Some edges are walls.
+
+There should also be a button that opens a map.
+
+I was thinking the background should be an svg of a topographical map to start with...
+
+## ToDo
+
+- Find high res topo map.
+- Get app to load it at current resolution of device.
+- Navigate by swiping in any direction - scroll snap to next width/height of display.
+- ...
+
+## Features
+
+- ...
+
+### React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +28,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+#### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
