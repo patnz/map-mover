@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import ViewCheck from './components/ViewCheck'
 
 function App() {

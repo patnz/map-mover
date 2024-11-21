@@ -20,7 +20,9 @@ export default function ViewCheck({}: Props) {
 
   return (
     <>
-      <div className="text-3xl">{viewportSize}</div>
+      <div className="text-3xl border-8 border-pink-400 w-screen m-0 p-0">
+        {viewportSize}
+      </div>
       <img src="/central-otago.png" alt="Central Otago" />
     </>
   )
