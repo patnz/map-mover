@@ -1,29 +1,56 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-type Props = {}
-
-export default function ViewCheck({}: Props) {
-  const [viewportSize, setViewportSize] = useState(
-    `Width: ${window.innerWidth} | Height:${window.innerHeight}`
-  )
-  const width = window.innerWidth
-  const height = window.innerHeight
-  console.log(`Viewport width: ${width}, height: ${height}`)
-  window.addEventListener('resize', () => {
-    setViewportSize(
-      `Width: ${window.innerWidth} | Height:${window.innerHeight}`
-    )
-    console.log(
-      `Viewport resized to: ${window.innerWidth}x${window.innerHeight}`
-    )
+export default function ViewCheck() {
+  const [viewportSize, setViewportSize] = useState({
+    height: 0,
+    width: 0,
   })
 
+  useEffect(() => {
+    const updateViewportSize = () => {
+      setViewportSize({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      })
+    }
+
+    updateViewportSize() // Initialize dimensions
+    window.addEventListener('resize', updateViewportSize)
+
+    return () => {
+      window.removeEventListener('resize', updateViewportSize)
+    }
+  }, [])
+
   return (
-    <>
-      <div className="text-3xl border-8 border-pink-400 w-screen m-0 p-0">
-        {viewportSize}
-      </div>
-      <img src="/central-otago.png" alt="Central Otago" />
-    </>
+    <div
+      style={{
+        width: `${viewportSize.width}px`,
+        height: `${viewportSize.height}px`,
+        position: 'relative',
+      }}
+    >
+      <p
+        style={{
+          width: `${viewportSize.width}px`,
+          height: `${viewportSize.height}px`,
+          border: '4px solid yellow',
+          position: 'relative',
+          zIndex: 20,
+        }}
+      >
+        Width: {viewportSize.width}, Height: {viewportSize.height}
+      </p>
+      <img
+        src="/central-otago.png"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: 10,
+        }}
+        alt="Central Otago"
+      />
+    </div>
   )
 }
