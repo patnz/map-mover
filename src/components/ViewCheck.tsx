@@ -24,31 +24,16 @@ export default function ViewCheck() {
 
   return (
     <div
-      style={{
-        width: `${viewportSize.width}px`,
-        height: `${viewportSize.height}px`,
-        position: 'relative',
-      }}
+      className={`relative w-[${viewportSize.width}] h-[${viewportSize.height}]`}
     >
       <p
-        style={{
-          width: `${viewportSize.width}px`,
-          height: `${viewportSize.height}px`,
-          border: '4px solid yellow',
-          position: 'relative',
-          zIndex: 20,
-        }}
+        className={`relative z-20 w-[${viewportSize.width}] h-[${viewportSize.height}]`}
       >
         Width: {viewportSize.width}, Height: {viewportSize.height}
       </p>
       <img
         src="/central-otago.png"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 10,
-        }}
+        className="absolute top-0 left-0 z-10 object-none"
         alt="Central Otago"
       />
     </div>
